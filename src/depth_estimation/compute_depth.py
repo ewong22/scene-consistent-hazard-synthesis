@@ -14,7 +14,7 @@ DEPTH_ROOT = Path("data/processed/depth")
 def load_midas(device: str = "cpu"):
     """
     Load a MiDaS / DPT model from torch.hub.
-    Using DPT_Large (accurate but a bit heavier).
+    Using DPT_Large 
     """
     model_type = "DPT_Large"  # or "DPT_Hybrid" / "MiDaS_small"
 
