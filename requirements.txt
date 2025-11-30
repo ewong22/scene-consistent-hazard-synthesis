@@ -1,0 +1,23 @@
+torch
+torchvision
+torchaudio
+numpy
+opencv-python
+Pillow
+matplotlib
+
+# diffusion / huggingface ecosystem
+diffusers
+transformers
+accelerate
+safetensors
+
+# depth + VLM helpers (you can trim/add later)
+timm
+
+# training / evaluation utils
+scikit-learn
+pyyaml
+
+# optional: for Mask R-CNN via detectron2 (usually installed separately)
+# detectron2
