@@ -25,13 +25,12 @@ def make_simple_road_mask(img: np.ndarray) -> np.ndarray:
 
     rect_width = int(w * 0.15)
     rect_height = bottom - top
+    
+    top = np.random.randint(0, h - rect_height)
+    left = np.random.randint(0, w - rect_width)
 
-    center_x = w // 2
-    left = center_x - rect_width // 2
-    right = center_x + rect_width // 2
-
-    left = max(0, left)
-    right = min(w, right)
+    bottom = top + rect_height
+    right = left + rect_width
 
     mask[top:bottom, left:right] = 255
 
