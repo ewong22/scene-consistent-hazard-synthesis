@@ -94,10 +94,10 @@ def build_synthetic_for_split(split: str = "train", max_images: Optional[int] = 
         synth_bgr = fake_inpaint(img_bgr, mask)
 
         rel = img_path.relative_to(IMG_ROOT)
-        out_img_path = SYNTH_ROOT / "images" / split / rel
+        out_img_path = SYNTH_ROOT / "images" / rel
         out_img_path = Path(str(out_img_path).replace("_leftImg8bit.png", "_synth.png"))
 
-        out_meta_path = SYNTH_ROOT / "meta" / split / rel
+        out_meta_path = SYNTH_ROOT / "meta" / rel
         out_meta_path = Path(str(out_meta_path).replace("_leftImg8bit.png", "_synth.json"))
 
         out_img_path.parent.mkdir(parents=True, exist_ok=True)
