@@ -10,8 +10,8 @@ class DepthEstimator:
         print("Loading Depth Model (Depth Anything Small)...")
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         
-        # Checkpoint: LiheYoung/depth-anything-small-hf
-        model_id = "LiheYoung/depth-anything-small-hf"
+        # Checkpoint: LiheYoung/depth-anything-large-hf
+        model_id = "depth-anything/Depth-Anything-V2-Large-hf"
         
         self.processor = AutoImageProcessor.from_pretrained(model_id)
         
@@ -68,7 +68,7 @@ class DepthEstimator:
 
 if __name__ == "__main__":
     # Test on the image with the box and ball
-    test_image_path = "data/raw/lostandfound/leftImg8bit/train/01_Hanns_Klemm_Str_45/01_Hanns_Klemm_Str_45_000000_000210_leftImg8bit.png" 
+    test_image_path = "data/raw/lostandfound/leftImg8bit/train/01_Hanns_Klemm_Str_45/01_Hanns_Klemm_Str_45_000007_000170_leftImg8bit.png" 
     
     if not os.path.exists(test_image_path):
         print(f"Error: Could not find image at {test_image_path}")
