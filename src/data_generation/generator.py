@@ -115,7 +115,7 @@ class HazardGenerator:
 
         # 3. Enhance Prompt
         enhanced_prompt = f"{prompt}"
-        negative_prompt = "bad, deformed, ugly, bad anatomy"
+        negative_prompt = "bad"
 
         # 4. Resize inputs to 512x512 (Diffusion standard)
         proc_w, proc_h = 512, 512
