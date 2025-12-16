@@ -23,7 +23,7 @@ class HazardGenerator:
 
         # 2. Load Stable Diffusion Inpainting (Base Model)
         self.pipe = StableDiffusionControlNetInpaintPipeline.from_pretrained(
-            "runwayml/stable-diffusion-inpainting", 
+            "CompVis/stable-diffusion-v1-4", 
             controlnet=controlnet, 
             torch_dtype=torch.float16,
             safety_checker=None,
@@ -133,7 +133,7 @@ class HazardGenerator:
                 control_image=depth_resized,
                 num_inference_steps=30,
                 strength=1.0, # Full inpainting strength
-                guidance_scale=10.0, # Increased for better prompt adherence (The final tuning fix)
+                guidance_scale=20.0, # Increased for better prompt adherence (The final tuning fix)
                 controlnet_conditioning_scale=0.1 # Low influence allows for new 3D objects
             ).images[0]
 
